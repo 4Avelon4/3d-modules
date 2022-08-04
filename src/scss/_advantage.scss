@@ -1,0 +1,159 @@
+.advantage {
+  &__container {
+    @include gutterContainer(15);
+    margin-bottom: 50px;
+    padding-top: 50px;
+
+    @include sm {
+      margin-bottom: 56px;
+      padding-top: 80px;
+    }
+
+    @include md {
+      margin-bottom: 76px;
+      padding-top: 80px;
+    }
+
+    @include xl {
+      margin-bottom: 80px;
+      padding-top: 80px;
+    }
+  }
+
+  &__content-top {
+    margin-bottom: 23px;
+    display: flex;
+    padding: 0 15px;
+
+    &-left {
+      display: none;
+
+      @include sm {
+        display: block;
+        margin-right: 30px;
+        min-width: 150px;
+        min-height: 134px;
+        background-image: url('@img/advantage/advantage-content-top-sm.png');
+        @include retinaImg {
+          background-image: url('@img/advantage/advantage-content-top-sm_2x.png');
+        }
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      @include md {
+        margin-top: 24px;
+        min-width: 211px;
+        min-height: 187px;
+        background-image: url('@img/advantage/advantage-content-top-md.png');
+        @include retinaImg {
+          background-image: url('@img/advantage/advantage-content-top-md_2x.png');
+        }
+      }
+
+      @include xl {
+        margin-top: 22px;
+        min-width: 160px;
+        min-height: 142px;
+        background-image: url('@img/advantage/advantage-content-top-xl.png');
+        @include retinaImg {
+          background-image: url('@img/advantage/advantage-content-top-xl_2x.png');
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    color: $colorTextWhiteBackground;
+    margin-bottom: 2px;
+
+    @include sm {
+      font-size: 40px;
+      line-height: 100%;
+      margin-bottom: 17px;
+    }
+
+    @include xl {
+      max-width: 400px;
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorDarkGray;
+
+    @include xl {
+      max-width: 600px;
+    }
+  }
+
+  &__content-bottom {
+    padding: 0 15px;
+  }
+
+  &__list {
+    @extend %clearListStyles;
+
+    @include sm {
+      --bs-gutter-x: 30px;
+    }
+  }
+
+  &__list-item {
+    min-height: 80px;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-bottom: 30px;
+
+    @include sm {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-descr {
+    margin: 0;
+    padding-top: 2px;
+    padding-left: 30px;
+    max-width: 70%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 119%;
+    color: #666666;
+
+    @include sm {
+      padding-top: 11px;
+      padding-left: 0;
+      max-width: 100%;
+    }
+
+    @include xl {
+      padding-top: 12px;
+      padding-left: 30px;
+      max-width: 70%;
+    }
+  }
+
+  @include xl {
+    &__list-item:last-child>&__item-descr {
+      padding-left: 27px;
+    }
+
+    &__list-item:nth-child(2)>&__item-descr {
+      padding-top: 13px;
+    }
+
+    &__list-item:last-child>&__item-descr {
+      padding-top: 14px;
+    }
+  }
+}
+
+@each $number in $advantageIconList {
+  @include advantageListIcon($number);
+}

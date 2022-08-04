@@ -1,0 +1,60 @@
+.footer {
+  &__container {
+    padding: 0 !important;
+  }
+
+  &__top {
+    background-color: $colorTextWhiteBackground;
+    padding: 28px 67px 24px;
+    margin-bottom: 3px;
+
+    @-moz-document url-prefix() {
+      margin-bottom: 4px;
+    }
+
+    @include sm {
+      margin-bottom: 4px;
+    }
+  }
+
+  &__list {
+    @extend %clearListStyles;
+
+    @include md {
+      right: 13px;
+    }
+  }
+
+  &__list-item {
+    width: 24px;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__copy {
+    margin: 0;
+    max-width: 90%;
+    font-size: 13px;
+    line-height: 15px;
+    color: $colorGray;
+
+    @include md {
+      margin-right: 1px;
+    }
+
+    &-icon {
+      color: $accent;
+    }
+  }
+}

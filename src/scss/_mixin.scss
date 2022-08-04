@@ -1,0 +1,99 @@
+@mixin gutterContainer($gutterValue) {
+  padding: 0;
+
+  @each $minWidth, $paddingValue in $containerPaddingValueList {
+    @media (min-width: #{$minWidth}px) {
+      padding: 0 ($paddingValue - $gutterValue);
+    }
+  }
+}
+
+@mixin sm {
+  @media (min-width: $smallMediaWidth) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $mediumMediaWidth) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $extraLargeMediaWidth) {
+    @content;
+  }
+}
+
+@mixin retinaImg {
+  @media (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+%extraSmallWidth {
+  @media (max-width: $containerMinWidth) {
+    width: $containerMinWidth;
+  }
+}
+
+%clearListStyles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%buttonStyle {
+  cursor: pointer;
+  font-weight: 700;
+  color: $colorTextDarkBackground;
+  background-color: $accent;
+  border: none;
+  border-radius: 20px;
+}
+
+@mixin advantageListIcon($icon-number) {
+  .lazyload .advantage__item-wrapper--#{$icon-number} {
+    width: 80px;
+    height: 80px;
+    background-image: url('@img/advantage/advantage-icon-#{$icon-number}.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@mixin coursesCardImage($image-number) {
+  .lazyload .card__prev--#{$image-number} {
+    max-width: 100%;
+    background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-extra-small.png');
+    @media (min-width: 320px) {
+      @include retinaImg {
+        background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-extra-small_2x.png');
+      }
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include sm {
+      background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-sm.png');
+      @include retinaImg {
+        background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-sm_2x.png');
+      }
+    }
+
+    @include md {
+      background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-md.png');
+      @include retinaImg {
+        background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-md_2x.png');
+      }
+    }
+
+    @include xl {
+      background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-xl.png');
+      @include retinaImg {
+        background-image: url('@img/courses/card-#{$image-number}/courses-card-#{$image-number}-xl_2x.png');
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+$containerMaxWidth: 1440px;
+$containerMinWidth: 320px;
+
+$smallMediaWidth: 576px;
+$mediumMediaWidth: 768px;
+$extraLargeMediaWidth: 1200px;
+
+$containerPaddingValueList: (
+  576: 33px,
+  768: 39px,
+  1200: 165px
+);
+
+$colorTextDarkBackground: #fff;
+$colorTextWhiteBackground: #2E2B44;
+$colorMenu: #2F2C45;
+$accent: #3F2AFF;
+$colorMediumBlue: #1900FF;
+$colorDarkBlue: #1604B8;
+$colorGray: #333;
+$colorDarkGray: #666;
+$colorLightSlateGray: #85859B;
+
+$advantageIconList: 1, 2, 3;
+$coursesImageList: 1, 2, 3, 4;

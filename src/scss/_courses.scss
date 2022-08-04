@@ -1,0 +1,223 @@
+.courses {
+  &__container {
+    @include gutterContainer(15);
+    margin-bottom: 50px;
+    padding-top: 46px;
+
+    @include sm {
+      margin-bottom: 80px;
+      padding-top: 75px;
+    }
+
+    @include md {
+      padding-top: 74px;
+    }
+
+    @include xl {
+      padding-top: 74px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: $colorTextWhiteBackground;
+    margin-bottom: 27px;
+    padding: 0 15px;
+
+    @include sm {
+      font-size: 40px;
+      margin-bottom: 23px;
+    }
+
+    @include md {
+      padding: 0 15px;
+      margin-bottom: 24px;
+
+      @-moz-document url-prefix() {
+        & {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    min-height: 100%;
+    background-clip: content-box !important;
+    background: #EDF0F9;
+    border-radius: 40px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @include sm {
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__card-content {
+    min-height: 473px;
+    padding: 30px;
+
+    @-moz-document url-prefix() {
+      padding-top: 31px;
+    }
+
+    &--last {
+      padding-top: 32px;
+    }
+
+    @include md {
+      min-height: 376px;
+      padding: 32px 30px 30px 29px;
+    }
+
+    @include xl {
+      min-height: 300px;
+    }
+  }
+
+  &__card:nth-child(3)>&__card-content {
+    padding-left: 31px;
+
+    @include sm {
+      padding-left: 30px;
+    }
+
+    @include md {
+      padding-left: 29px;
+    }
+  }
+
+  &__card:last-child>&__card-content {
+    padding-top: 33px;
+
+    @include md {
+      padding: 32px 30px 30px 29px;
+    }
+  }
+
+  &__card-title {
+    line-height: 130%;
+    margin-bottom: 8px;
+    width: 90%;
+
+    @include sm {
+      margin-bottom: 9px;
+      width: 105%;
+    }
+
+    @include md {
+      padding-left: 1px;
+    }
+  }
+
+  &__card-descr {
+    margin-bottom: 82px;
+
+    @include sm {
+      width: 110%;
+    }
+
+    @include md {
+      width: 100%;
+    }
+  }
+}
+
+.card {
+  &__prev {
+    position: relative;
+    height: 180px;
+    border-radius: 20px 20px 0px 0px;
+
+    &-descr {
+      position: absolute;
+      top: 13px;
+      right: 10px;
+      max-width: 100px;
+      font-size: 16px;
+      line-height: 19px;
+      color: $colorTextDarkBackground;
+
+      @-moz-document url-prefix() {
+        & {
+          top: 13px;
+        }
+      }
+
+      @include sm {
+        top: 14px;
+      }
+
+      @include xl {
+        right: 4px;
+
+        @-moz-document url-prefix() {
+          & {
+            top: 12px;
+          }
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: -4px;
+        left: -29px;
+        width: 24px;
+        height: 24px;
+        background-image: url('@img/courses/courses-time.svg');
+        background-repeat: no-repeat;
+
+        @-moz-document url-prefix() {
+          & {
+            top: -3px;
+          }
+        }
+
+        @include xl {
+          top: -3px;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    @extend %buttonStyle;
+    padding: 21px 56px;
+    position: absolute;
+    bottom: 30px;
+    left: 45px;
+    max-width: 230px;
+
+    @-moz-document url-prefix() {
+      bottom: 29px;
+    }
+
+    @include sm {
+      padding: 20px 48px;
+      max-width: 180px;
+    }
+
+    @include md {
+      padding: 21px 56px;
+      max-width: 270px;
+    }
+
+    @include xl {
+      padding: 21px 59px;
+      max-width: 480px;
+    }
+  }
+}
+
+@each $number in $coursesImageList {
+  @include coursesCardImage($number);
+}

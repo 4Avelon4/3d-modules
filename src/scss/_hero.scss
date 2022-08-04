@@ -1,0 +1,147 @@
+.hero {
+  background: radial-gradient(49% 49% at 67.78% 84.57%, #555681 0%, #2E2B44 100%);
+
+  @include md {
+    background: radial-gradient(44.07% 44.07% at 67.78% 55.93%, #555681 0%, #2E2B44 100%);
+  }
+
+  &__container {
+    min-height: 353px;
+
+    @include sm {
+      min-height: 567px;
+    }
+
+    @include md {
+      min-height: 620px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding-top: 49px;
+    padding-bottom: 49px;
+
+    @include sm {
+      min-height: 567px;
+      padding-top: 77px;
+      padding-bottom: 75px;
+    }
+
+    @include md {
+      min-height: 620px;
+      padding-top: 130px;
+      padding-bottom: 110px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        z-index: 2;
+        width: 330px;
+        height: 351px;
+        top: calc(50% - 193px);
+        right: 0;
+        background-image: url('@img/hero/hero-background-md.png');
+        @include retinaImg {
+          background-image: url('@img/hero/hero-background-md_2x.png');
+        }
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    @include xl {
+      &::before {
+        width: 633px;
+        height: 593px;
+        top: calc(50% - 295px);
+        background-image: url('@img/hero/hero-background-xl.png');
+        @include retinaImg {
+          background-image: url('@img/hero/hero-background-xl_2x.png');
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 3;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    color: $colorTextDarkBackground;
+    margin-bottom: 5px;
+
+    @include sm {
+      font-size: 50px;
+      margin-bottom: 16px;
+    }
+
+    @include md {
+      max-width: 400px;
+    }
+
+    @include xl {
+      max-width: 500px;
+      font-size: 60px;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__descr {
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    font-size: 16px;
+    line-height: 130%;
+    color: $colorTextDarkBackground;
+
+    @include sm {
+      max-width: 360px;
+      font-size: 18px;
+      line-height: 150%;
+      margin-bottom: 63px;
+    }
+
+    @include xl {
+      max-width: 450px;
+    }
+  }
+
+  &__btn-wrapper {
+    height: 87px;
+
+    @include sm {
+      padding-left: 0px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 30px;
+    z-index: 3;
+    @extend %buttonStyle;
+    padding: 20px 54px;
+    max-width: 290px;
+    font-size: 16px;
+    line-height: 19px;
+
+    @include sm {
+      padding: 24px 75px;
+      bottom: 134px;
+      max-width: 510px;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    @include md {
+      max-width: 345px;
+    }
+
+    @include xl {
+      bottom: 129px;
+      max-width: 444px;
+    }
+  }
+}

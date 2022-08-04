@@ -1,0 +1,78 @@
+.teachers {
+  background: $colorTextWhiteBackground;
+
+  &__container {
+    @include gutterContainer(15);
+  }
+
+  &__content {
+    padding-top: 47px;
+    padding-bottom: 48px;
+
+    @include sm {
+      padding-top: 75px;
+      padding-bottom: 50px;
+    }
+
+    @include xl {
+      padding-top: 74px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: $colorTextDarkBackground;
+    margin-bottom: 27px;
+    padding-left: 15px;
+
+    @include sm {
+      font-size: 40px;
+      margin-bottom: 23px;
+    }
+
+    @include xl {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__card:not(:last-child) {
+    margin-bottom: 24px;
+
+    @include sm {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    margin-bottom: 27px;
+  }
+
+  &__card-title {
+    line-height: 150%;
+    color: $colorTextDarkBackground;
+    margin-bottom: 6px;
+    padding-left: 1px;
+
+    @-moz-document url-prefix() {
+      &:last-child {
+        margin-bottom: 8px;
+      }
+    }
+
+    @include sm {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__card-descr {
+    color: $colorLightSlateGray;
+
+    @include md {
+      width: 101%;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.logo {
+  &:focus {
+    outline: none;
+  }
+
+  &:active .logo__icon {
+    transform: scale(1.1);
+  }
+
+  @include xl {
+    &:focus {
+      outline: none;
+    }
+
+    &:focus .logo__icon,
+    &:hover .logo__icon {
+      transform: scale(1.2);
+    }
+
+    &:active .logo__icon {
+      transform: scale(1.1);
+    }
+  }
+
+  & .logo__icon {
+    transition: transform .2s ease-in-out;
+  }
+}
+
+.menu__link {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: $colorMediumBlue;
+  }
+
+  @include sm {
+    &:active {
+      color: $colorTextWhiteBackground;
+    }
+  }
+
+  @include xl {
+
+    &:focus,
+    &:hover {
+      color: $colorTextWhiteBackground;
+      outline: none;
+    }
+
+    &:active {
+      color: $colorDarkBlue;
+    }
+  }
+
+  & {
+    transition: color .2s ease-in-out;
+  }
+}
+
+.btn {
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $colorMediumBlue;
+  }
+
+  @include xl {
+    &:focus,
+    &:hover {
+      background-color: $colorDarkBlue;
+      outline: none;
+    }
+
+    &:active {
+      background-color: $colorMediumBlue;
+    }
+  }
+
+  & {
+    transition: background-color .2s ease-in-out;
+  }
+}
+
+.footer__link {
+  fill: $colorTextDarkBackground;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+
+  @include xl {
+    &:focus {
+      outline: none;
+    }
+
+    &:focus,
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+
+  & {
+    transition: transform .2s ease-in-out;
+  }
+}

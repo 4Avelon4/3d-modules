@@ -1,0 +1,220 @@
+.header {
+  position: relative;
+  background-color: $accent;
+  transition: background-color .3s ease-in-out;
+
+  @include sm {
+    background-color: $accent !important;
+  }
+
+  &__container {
+    min-height: 80px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    @include sm {
+      min-height: 133px;
+      padding: 30px 53px;
+    }
+
+    @include md {
+      min-height: 80px;
+      padding: 27px 39px 25px;
+    }
+
+    @include xl {
+      padding: 27px 165px 25px;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @include sm {
+      flex-direction: column;
+    }
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+
+  &__logo-wrapper {
+    margin-top: 4px;
+
+    @include sm {
+      margin-top: 0;
+    }
+
+    @include md {
+      margin-top: 3px;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  padding: 77px 15px;
+  background-color: $colorMenu;
+  visibility: hidden;
+  transition: visibility .3s ease-in-out, transform .3s ease-in-out;
+
+  @include sm {
+    display: block;
+    background-color: transparent;
+    position: relative;
+    top: 27px;
+    left: -12px;
+    width: 470px;
+    min-height: 100% !important;
+    padding: 0 12px;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+
+  @include md {
+    margin-bottom: 3px;
+    padding: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
+.menu__list {
+  @extend %clearListStyles;
+  flex-direction: column;
+  max-width: 100%;
+
+  @include sm {
+    flex-direction: row;
+  }
+}
+
+.menu__list-item {
+  width: 100%;
+  font-size: 18px;
+  line-height: 21px;
+  color: $colorTextDarkBackground;
+
+  @include sm {
+    width: max-content;
+    max-width: 100px;
+
+    &:nth-child(3) {
+      max-width: 135px;
+    }
+  }
+
+  @include md {
+    &:not(:last-child) {
+      margin-right: 57px;
+    }
+  }
+}
+
+.menu__list-item:not(:last-child) {
+  margin-bottom: 56px;
+
+  @include sm {
+    margin-right: 57px;
+    margin-bottom: 0;
+  }
+}
+
+.logo {
+  @include sm {
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+
+  &__icon {
+    width: 72px;
+    height: 16px;
+    fill: $colorTextDarkBackground;
+    background-position: 0 0;
+
+    @include sm {
+      width: 94px;
+      height: 21px;
+    }
+  }
+}
+
+.toggle {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: 12px;
+
+  @media (max-width: 575px) {
+    display: block;
+
+
+    &__btn {
+      display: block;
+      position: absolute;
+      z-index: 5;
+      background-color: transparent;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__icon,
+    &__icon::before,
+    &__icon::after {
+      display: block;
+      content: '';
+      background-color: $colorTextDarkBackground;
+      height: 2px;
+      width: 19px;
+      border-radius: 4px;
+      transition: all ease-in-out .3s;
+    }
+
+    &__icon::before {
+      transform: translateY(-7px);
+    }
+
+    &__icon::after {
+      transform: translateY(5px);
+    }
+
+    &__btn--open &__icon {
+      background-color: transparent;
+    }
+
+    &__btn--open &__icon::before {
+      transform: translate(-2px, 0px) rotate(45deg);
+      width: 23px;
+    }
+
+    &__btn--open &__icon::after {
+      transform: translate(-2px, -1px) rotate(-45deg);
+      width: 23px;
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .open {
+    visibility: visible;
+    transform: translateX(100%);
+  }
+
+  .header--open {
+    background-color: $colorMenu;
+  }
+
+  .stop--scroll {
+    overflow: hidden;
+  }
+}

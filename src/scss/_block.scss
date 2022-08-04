@@ -1,0 +1,18 @@
+.cards {
+  @extend %clearListStyles;
+}
+
+.card {
+  --bs-gutter-x: 30px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__descr {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
